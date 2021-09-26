@@ -1,6 +1,7 @@
 import express from "express";
-import { creditinfo } from "../controllers/credit.js";
+import { addcreditinfo, getcreditinfo } from "../controllers/credit.js";
 const router = express.Router();
 
-router.post("/", creditinfo);
+router.post("/", addcreditinfo);
+router.get("/:id", getcreditinfo);
 export default router;
