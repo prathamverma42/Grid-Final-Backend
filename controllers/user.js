@@ -7,14 +7,14 @@ export const checkuserdetails = async (req, res) => {
   const stored_password = await UserDB.findOne({ email }).select("+password");
   console.log(stored_password);
   if (stored_password === null) {
-    res.status(200).send({ status: false });
+    res.status(200).send({ status: false, data: null });
     return;
   }
   var password_match = await stored_password.checkpwd(req.body.password);
   if (password_match) {
-    res.status(200).send({ status: true });
+    res.status(200).send({ status: true, data: stored_password });
   } else {
-    res.status(200).send({ status: false });
+    res.status(200).send({ status: false, data: null });
   }
 };
 
