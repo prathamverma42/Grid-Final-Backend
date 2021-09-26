@@ -2,13 +2,19 @@
 import UserDB from "../models/userDB.js";
 
 export const checkuserdetails = async (req, res) => {
+  console.log(req.body);
   const email = req.body.email;
   const stored_password = await UserDB.findOne({ email }).select("+password");
+  console.log(stored_password);
+  if (stored_password === null) {
+    res.status(200).send({ status: false });
+    return;
+  }
   var password_match = await stored_password.checkpwd(req.body.password);
   if (password_match) {
     res.status(200).send({ status: true });
   } else {
-    res.status(404).send({ status: false });
+    res.status(200).send({ status: false });
   }
 };
 
