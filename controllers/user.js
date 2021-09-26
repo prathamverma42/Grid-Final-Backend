@@ -1,0 +1,19 @@
+// including the Modal of User Database
+import UserDB from "../models/userDB.js";
+
+export const checkuserdetails = async (req, res) => {
+  const email = req.body.email;
+  const stored_password = await UserDB.findOne({ email }).select("+password");
+  var password_match = await stored_password.checkpwd(req.body.password);
+  if (password_match) {
+    res.status(200).send({ status: true });
+  } else {
+    res.status(404).send({ status: false });
+  }
+};
+
+// this is to add new survey details at the backend
+export const addnewuser = async (req, res) => {
+  const info = await UserDB.create(req.body);
+  res.status(201).send({ data: info });
+};

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const IqTestSchema = mongoose.Schema({
   q1: {
-    type: Number,
+    type: String,
   },
   q2: {
     type: String,
@@ -12,6 +12,9 @@ const IqTestSchema = mongoose.Schema({
   },
   score: {
     type: Number,
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
   },
 });
 

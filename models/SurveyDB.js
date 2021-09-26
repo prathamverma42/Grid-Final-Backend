@@ -10,6 +10,9 @@ const SurveyformSchema = mongoose.Schema({
   recommendation: {
     type: String,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
 });
 
 const SurveyDB = mongoose.model("SurveyDB", SurveyformSchema);

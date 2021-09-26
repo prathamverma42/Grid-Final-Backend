@@ -10,6 +10,9 @@ const CreditformSchema = mongoose.Schema({
   pancard: {
     type: String,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
 });
 
 const CreditDB = mongoose.model("CreditDB", CreditformSchema);
