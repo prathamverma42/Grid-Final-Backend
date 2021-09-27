@@ -7,6 +7,9 @@ const CreditformSchema = mongoose.Schema({
   contact: {
     type: Number,
   },
+  dob: {
+    type: String,
+  },
   pancard: {
     type: String,
   },
