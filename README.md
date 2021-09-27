@@ -3,6 +3,10 @@
 <!-- #### Example: -->
 
 <h3>GridBot</h3>
+
+## :camera: DataBase Screen Shot(s)
+![backend](https://user-images.githubusercontent.com/56119387/134922424-bb5813dd-d001-4b7a-9bca-e5bf2ad4fe63.png)
+
 <h3>Tech Stack :exclamation:</h3>
 <p>Html, Css, Reactjs, Javascript, Bootstrap, Nodejs, Express, MongoDB
 </p>
