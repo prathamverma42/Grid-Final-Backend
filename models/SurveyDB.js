@@ -5,7 +5,7 @@ const SurveyformSchema = mongoose.Schema({
     type: Number,
   },
   feature: {
-    type: String,
+    type: [String],
   },
   recommendation: {
     type: String,
