@@ -3,10 +3,12 @@ import {
   addcreditinfo,
   getcreditinfo,
   updatecreditinfo,
+  // checkuserinfo,
 } from "../controllers/credit.js";
 const router = express.Router();
 
+// router.post("/checkuser", checkuserinfo);
+router.post("/update/:id", updatecreditinfo);
 router.post("/:id", addcreditinfo);
 router.get("/:id", getcreditinfo);
-router.post("/update/:id", updatecreditinfo);
 export default router;

@@ -13,6 +13,9 @@ const CreditformSchema = mongoose.Schema({
   pancard: {
     type: String,
   },
+  credittype: {
+    type: String,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
   },
